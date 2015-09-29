@@ -11,12 +11,9 @@
 
 namespace EXSyst\Bundle\RestBundle\DependencyInjection;
 
-use FOS\RestBundle\Util\Codes;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class EXSystRestExtension extends Extension
