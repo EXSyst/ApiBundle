@@ -48,7 +48,9 @@ abstract class RestController extends Controller
             $etagGenerator->generate($response->getContent())
         );
 
-        $response->isNotModified();
+        $response->isNotModified(
+            $this->get('request_stack')->getCurrentRequest()
+        );
 
         return $response;
     }
