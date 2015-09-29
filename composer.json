@@ -1,0 +1,28 @@
+{
+	"name": "exsyst/rest-bundle",
+	"type": "library",
+	"description": "Provides several helpers to build your rest API",
+	"license": "Apache-2.0",
+	"authors": [{
+		"name": "EXSyst"
+	}],
+	"require": {
+		"php": ">=5.5",
+		"symfony/framework-bundle": "^2.7|^3.0",
+		"symfony/serializer": "^2.7|^3.0",
+		"exsyst/rest": "0.0.x-dev"
+	},
+	"require-dev": {
+		"symfony/phpunit-bridge": "~2.7"
+	},
+	"autoload": {
+		"psr-4": {
+			"EXSyst\\Bundle\\RestBundle\\": ""
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.0.x-dev"
+		}
+	}
+}
