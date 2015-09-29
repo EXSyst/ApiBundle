@@ -44,14 +44,14 @@ abstract class RestController extends Controller
         $response->setContent($serializedValue);
 
         $etagGenerator = $this->get('exsyst_rest.etag_generator');
-        $response->setEtag(
-            $etagGenerator->generate($response->getContent())
-        );
-
-        $response->isNotModified(
-            $this->get('request_stack')->getCurrentRequest()
-        );
-
+        $etag = $etagGenerator->generate($response->getContent());
+        if($etag !== false) {
+            $response->setEtag($etag);
+            $response->isNotModified(
+                $this->get('request_stack')->getCurrentRequest()
+            );
+        }
+        
         return $response;
     }
 }
