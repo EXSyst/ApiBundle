@@ -10,7 +10,7 @@
 		"php": ">=5.5",
 		"symfony/framework-bundle": "^2.7|^3.0",
 		"symfony/serializer": "^2.7|^3.0",
-		"exsyst/rest": "0.0.x-dev"
+		"exsyst/rest": "^0.0@dev"
 	},
 	"require-dev": {
 		"symfony/phpunit-bridge": "~2.7"

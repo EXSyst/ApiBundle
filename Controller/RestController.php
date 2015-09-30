@@ -46,12 +46,12 @@ abstract class RestController extends Controller
         $etagGenerator = $this->get('exsyst_rest.etag_generator');
         $etag = $etagGenerator->generate($response->getContent());
         if($etag !== false) {
-            $response->setEtag($etag);
+            $response->setEtag($etag->getValue(), $etag->isWeak());
             $response->isNotModified(
                 $this->get('request_stack')->getCurrentRequest()
             );
         }
-        
+
         return $response;
     }
 }
