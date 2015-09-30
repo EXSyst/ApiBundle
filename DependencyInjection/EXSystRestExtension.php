@@ -36,4 +36,9 @@ class EXSystRestExtension extends Extension
 
         $container->setParameter('exsyst_rest.serializer.default_format', $config['serializer']['default_format']);
     }
+
+    public function getAlias()
+    {
+        return 'exsyst_rest';
+    }
 }

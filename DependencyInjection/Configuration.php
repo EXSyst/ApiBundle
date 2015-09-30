@@ -25,8 +25,13 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->arrayNode('serializer')
-                    ->scalarNode('default_format')->setDefaultValue('json')->end()
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('default_format')->cannotBeEmpty()->defaultValue('json')->end()
+                    ->end()
                 ->end()
             ->end();
+
+        return $treeBuilder;
     }
 }
