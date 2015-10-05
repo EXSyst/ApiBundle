@@ -2,9 +2,9 @@
 
 namespace EXSyst\Bundle\RestBundle\Tests\Functional\app;
 
-use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpKernel\Kernel;
 
 /**
  * Extract from SymfonyFrameworkBundle tests.
@@ -61,7 +61,7 @@ class AppKernel extends Kernel
 
     public function serialize()
     {
-        return serialize(array($this->testCase, $this->rootConfig, $this->getEnvironment(), $this->isDebug()));
+        return serialize([$this->testCase, $this->rootConfig, $this->getEnvironment(), $this->isDebug()]);
     }
 
     public function unserialize($str)

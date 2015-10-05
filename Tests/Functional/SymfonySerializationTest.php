@@ -9,7 +9,7 @@ class SymfonySerializationTest extends WebTestCase
 {
     public function setUp()
     {
-        $this->client = $this->createClient(array('test_case' => 'SymfonySerialization', 'root_config' => 'config.yml'));
+        $this->client = $this->createClient(['test_case' => 'SymfonySerialization', 'root_config' => 'config.yml']);
     }
     public function testXmlSerialization()
     {

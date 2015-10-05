@@ -9,7 +9,7 @@ class JMSSerializationTest extends WebTestCase
 {
     public function testXmlSerialization()
     {
-        $client = $this->createClient(array('test_case' => 'JMSSerialization', 'root_config' => 'config.yml'));
+        $client = $this->createClient(['test_case' => 'JMSSerialization', 'root_config' => 'config.yml']);
 
         $client->request('GET', '/jms-serializer/xml');
         $response = $client->getResponse();
@@ -29,7 +29,7 @@ class JMSSerializationTest extends WebTestCase
 
     public function testJsonSerialization()
     {
-        $client = $this->createClient(array('test_case' => 'JMSSerialization', 'root_config' => 'config.yml'));
+        $client = $this->createClient(['test_case' => 'JMSSerialization', 'root_config' => 'config.yml']);
 
         $client->request('GET', '/jms-serializer/json');
         $response = $client->getResponse();

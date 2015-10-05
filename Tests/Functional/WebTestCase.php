@@ -28,7 +28,7 @@ class WebTestCase extends BaseWebTestCase
         return 'EXSyst\Bundle\RestBundle\Tests\Functional\app\AppKernel';
     }
 
-    protected static function createKernel(array $options = array())
+    protected static function createKernel(array $options = [])
     {
         $class = self::getKernelClass();
 
