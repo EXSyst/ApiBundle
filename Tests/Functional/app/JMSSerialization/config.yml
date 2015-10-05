@@ -1,0 +1,6 @@
+imports:
+    - { resource: ../config/default.yml }
+
+exsyst_rest:
+    serializer:
+        default_format: xml

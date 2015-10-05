@@ -1,0 +1,15 @@
+symfony_serializer_xml:
+    path:     /symfony-serializer/xml
+    defaults: { _controller: TestBundle:SymfonySerializer:xml }
+
+symfony_serializer_json:
+    path:     /symfony-serializer/json
+    defaults: { _controller: TestBundle:SymfonySerializer:json }
+
+jms_serializer_xml:
+    path:     /jms-serializer/xml
+    defaults: { _controller: TestBundle:JMSSerializer:xml }
+
+jms_serializer_json:
+    path:     /jms-serializer/json
+    defaults: { _controller: TestBundle:JMSSerializer:json }
