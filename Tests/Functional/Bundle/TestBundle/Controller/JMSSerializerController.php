@@ -7,13 +7,17 @@ use JMS\Serializer\SerializationContext;
 
 class JMSSerializerController extends RestController
 {
-    public function xmlAction() {
+    public function xmlAction()
+    {
         $context = new SerializationContext();
+
         return $this->serialize(['foo' => 'bar', 'bar' => 'foo', 'foobar' => null], $context);
     }
 
-    public function jsonAction() {
+    public function jsonAction()
+    {
         $context = new SerializationContext();
+
         return $this->serialize(['foo' => 'bar', 'bar' => 'foo', 'foobar' => null], $context, 'json');
     }
 }

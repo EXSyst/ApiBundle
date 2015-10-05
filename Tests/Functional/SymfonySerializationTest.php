@@ -7,7 +7,8 @@ namespace EXSyst\Bundle\RestBundle\Tests\Functional;
  */
 class SymfonySerializationTest extends WebTestCase
 {
-    public function setUp() {
+    public function setUp()
+    {
         $this->client = $this->createClient(array('test_case' => 'SymfonySerialization', 'root_config' => 'config.yml'));
     }
     public function testXmlSerialization()
@@ -34,7 +35,8 @@ class SymfonySerializationTest extends WebTestCase
         $this->assertEquals('"'.md5($expectedContent).'"', $response->getEtag());
     }
 
-    public function testCachedResponse() {
+    public function testCachedResponse()
+    {
         $expectedContent = '{"foo":"bar","bar":"foo","foobar":null}';
 
         $this->client->request('GET', '/symfony-serializer/json', [], [], ['HTTP_if_none_match' => '"'.md5($expectedContent).'"']);

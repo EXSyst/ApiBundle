@@ -7,7 +7,7 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Kernel;
 
 /**
- * Extract from SymfonyFrameworkBundle tests
+ * Extract from SymfonyFrameworkBundle tests.
  */
 class WebTestCase extends BaseWebTestCase
 {
