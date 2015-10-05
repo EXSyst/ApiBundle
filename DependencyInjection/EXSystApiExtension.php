@@ -40,6 +40,7 @@ class EXSystApiExtension extends Extension
         $this->loadSerialization($config, $loader, $container);
         $this->loadRouting($config, $loader, $container);
         $this->loadVersioning($config, $loader, $container);
+        $this->loadParameterValidation($config, $loader, $container);
     }
 
     private function loadSerialization(array $config, YamlFileLoader $loader, ContainerBuilder $container)
@@ -92,6 +93,15 @@ class EXSystApiExtension extends Extension
             }
 
             $container->getDefinition('exsyst_api.version.resolver.chain_resolver')->replaceArgument(0, $resolvers);
+        }
+    }
+
+    private function loadParameterValidation(array $config, YamlFileLoader $loader, ContainerBuilder $container)
+    {
+        if ($config['parameter']['validation']['enabled']) {
+            $loader->load('parameter_validation.yml');
+
+            $container->getDefinition('exsyst_api.parameter.validation_listener')->replaceArgument(2, $config['parameter']['validation']['attributeName']);
         }
     }
 
