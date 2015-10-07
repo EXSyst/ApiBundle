@@ -1,0 +1,3 @@
+controller:
+    resource: EXSyst\Bundle\RestBundle\Tests\Fixtures\AnnotatedController
+    type: rest

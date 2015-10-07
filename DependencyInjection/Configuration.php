@@ -33,11 +33,15 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('serializer')
+                ->arrayNode('serialization')
+                    ->canBeDisabled()
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('default_format')->cannotBeEmpty()->defaultValue('json')->end()
                     ->end()
+                ->end()
+                ->arrayNode('routing')
+                    ->canBeEnabled()
                 ->end()
             ->end();
 

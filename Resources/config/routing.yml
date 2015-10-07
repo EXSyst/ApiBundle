@@ -1,0 +1,6 @@
+services:
+    exsyst_rest.routing.loader.rest_class:
+        class: EXSyst\Bundle\RestBundle\Routing\Loader\RestClassLoader
+        arguments: [ @annotation_reader ]
+        tags:
+            - { name: routing.loader }

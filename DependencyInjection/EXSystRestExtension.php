@@ -33,8 +33,13 @@ class EXSystRestExtension extends Extension
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('etag.yml');
+        if ($config['serialization']['enabled']) {
+            $container->setParameter('exsyst_rest.serializer.default_format', $config['serialization']['default_format']);
+        }
 
-        $container->setParameter('exsyst_rest.serializer.default_format', $config['serializer']['default_format']);
+        if ($config['routing']['enabled']) {
+            $loader->load('routing.yml');
+        }
     }
 
     public function getAlias()

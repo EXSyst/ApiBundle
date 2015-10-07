@@ -1,0 +1,9 @@
+imports:
+    - { resource: ../config/default.yml }
+
+framework:
+    router: { resource: "%kernel.root_dir%/Routing/routing.yml" }
+
+exsyst_rest:
+    serialization: false
+    routing: true

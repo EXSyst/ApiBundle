@@ -23,7 +23,7 @@ class SerializerConfigurationPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if ($container->has('exsyst_rest.serializer')) {
+        if ($container->has('exsyst_rest.serializer') || !$container->hasParameter('exsyst_rest.serializer.default_format')) {
             return;
         }
 
