@@ -23,8 +23,8 @@
 		"phpoption/phpoption": "^1.1"
 	},
 	"suggest": {
-		"symfony/serializer": "For using the rest controller shortcuts.",
-		"jms/serializer-bundle": "For using the rest controller shortcuts."
+		"symfony/serializer": "For using the rest controller features.",
+		"jms/serializer-bundle": "For using the rest controller features."
 	},
 	"autoload": {
 		"psr-4": {
