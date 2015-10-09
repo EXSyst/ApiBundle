@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the EXSyst package.
+ * This file is part of the RestBundle package.
  *
  * (c) EXSyst
  *
