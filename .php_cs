@@ -1,8 +1,11 @@
 <?php
 
+use Symfony\CS\Config\Config;
+use Symfony\CS\Finder\DefaultFinder;
 use Symfony\CS\Fixer\Contrib\HeaderCommentFixer;
+use Symfony\CS\FixerInterface;
 
-$finder = Symfony\CS\Finder\DefaultFinder::create()
+$finder = DefaultFinder::create()
     ->in(__DIR__)
 ;
 
@@ -16,8 +19,8 @@ file that was distributed with this source code.
 EOF;
 HeaderCommentFixer::setHeader($header);
 
-return Symfony\CS\Config\Config::create()
-    ->level(Symfony\CS\FixerInterface::SYMFONY_LEVEL)
+return Config::create()
+    ->level(FixerInterface::SYMFONY_LEVEL)
     ->fixers(array('align_double_arrow', 'header_comment'))
     ->finder($finder)
     ->setUsingCache(true)
