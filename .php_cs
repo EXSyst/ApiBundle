@@ -21,7 +21,12 @@ HeaderCommentFixer::setHeader($header);
 
 return Config::create()
     ->level(FixerInterface::SYMFONY_LEVEL)
-    ->fixers(array('align_double_arrow', 'header_comment', 'ordered_use'))
+    ->fixers([
+        'align_double_arrow',
+        'header_comment',
+        'ordered_use',
+        'short_array_syntax',
+    ])
     ->finder($finder)
     ->setUsingCache(true)
 ;
