@@ -11,7 +11,6 @@
 
 namespace EXSyst\Bundle\RestBundle\Routing\Loader;
 
-use Doctrine\Common\Annotations\Reader;
 use Symfony\Component\Routing\Loader\AnnotationClassLoader;
 use Symfony\Component\Routing\Route;
 
