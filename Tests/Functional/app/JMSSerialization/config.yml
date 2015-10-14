@@ -2,5 +2,5 @@ imports:
     - { resource: ../config/default.yml }
 
 exsyst_rest:
-    serializer:
+    serialization:
         default_format: xml

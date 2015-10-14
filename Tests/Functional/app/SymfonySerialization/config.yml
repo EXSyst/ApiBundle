@@ -6,5 +6,5 @@ framework:
         enabled: true
 
 exsyst_rest:
-    serializer:
+    serialization:
         default_format: xml
