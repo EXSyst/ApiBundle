@@ -66,7 +66,7 @@ class RestClassLoader extends AnnotationClassLoader
      */
     protected function configureRoute(Route $route, \ReflectionClass $class, \ReflectionMethod $method, $annot)
     {
-        $route->setDefault('_controller', $class->getName().'::'.$method->name);
+        $route->setDefault('_controller', $class->name.'::'.$method->name);
     }
 
     /**
