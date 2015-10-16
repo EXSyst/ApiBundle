@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Tests\Functional\Bundle\TestBundle\Controller;
+namespace EXSyst\Bundle\ApiBundle\Tests\Functional\Bundle\TestBundle\Controller;
 
-use EXSyst\Bundle\RestBundle\Controller\RestController;
+use EXSyst\Bundle\ApiBundle\Controller\ApiController;
 
-class SymfonySerializerController extends RestController
+class SymfonySerializerController extends ApiController
 {
     public function xmlAction()
     {

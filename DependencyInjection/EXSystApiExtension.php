@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\DependencyInjection;
+namespace EXSyst\Bundle\ApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class EXSystRestExtension extends Extension
+class EXSystApiExtension extends Extension
 {
     /**
      * Loads the services based on your application configuration.
@@ -34,7 +34,7 @@ class EXSystRestExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('etag.yml');
         if ($config['serialization']['enabled']) {
-            $container->setParameter('exsyst_rest.serializer.default_format', $config['serialization']['default_format']);
+            $container->setParameter('exsyst_api.serializer.default_format', $config['serialization']['default_format']);
         }
 
         if ($config['routing']['enabled']) {
@@ -44,6 +44,6 @@ class EXSystRestExtension extends Extension
 
     public function getAlias()
     {
-        return 'exsyst_rest';
+        return 'exsyst_api';
     }
 }

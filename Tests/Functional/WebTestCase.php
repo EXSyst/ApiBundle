@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Tests\Functional;
+namespace EXSyst\Bundle\ApiBundle\Tests\Functional;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase as BaseWebTestCase;
 use Symfony\Component\Filesystem\Filesystem;
@@ -34,7 +34,7 @@ class WebTestCase extends BaseWebTestCase
     {
         require_once __DIR__.'/app/AppKernel.php';
 
-        return 'EXSyst\Bundle\RestBundle\Tests\Functional\app\AppKernel';
+        return 'EXSyst\Bundle\ApiBundle\Tests\Functional\app\AppKernel';
     }
 
     protected static function createKernel(array $options = [])
@@ -48,7 +48,7 @@ class WebTestCase extends BaseWebTestCase
         return new $class(
             $options['test_case'],
             isset($options['root_config']) ? $options['root_config'] : 'config.yml',
-            isset($options['environment']) ? $options['environment'] : 'restbundletest'.strtolower($options['test_case']),
+            isset($options['environment']) ? $options['environment'] : 'apibundletest'.strtolower($options['test_case']),
             isset($options['debug']) ? $options['debug'] : true
         );
     }

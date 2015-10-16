@@ -1,6 +1,6 @@
 imports:
     - { resource: ../config/default.yml }
 
-exsyst_rest:
+exsyst_api:
     serialization:
         default_format: xml

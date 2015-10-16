@@ -1,6 +1,6 @@
 services:
-    exsyst_rest.routing.loader.rest_class:
-        class: EXSyst\Bundle\RestBundle\Routing\Loader\RestClassLoader
+    exsyst_api.routing.loader.api_class:
+        class: EXSyst\Bundle\ApiBundle\Routing\Loader\ApiClassLoader
         arguments: [ @annotation_reader ]
         tags:
             - { name: routing.loader }

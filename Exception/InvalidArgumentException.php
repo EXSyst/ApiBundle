@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Exception;
+namespace EXSyst\Bundle\ApiBundle\Exception;
 
 /**
  * Exception thrown if an argument is not of the expected type.

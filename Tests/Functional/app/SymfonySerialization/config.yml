@@ -5,6 +5,6 @@ framework:
     serializer:
         enabled: true
 
-exsyst_rest:
+exsyst_api:
     serialization:
         default_format: xml

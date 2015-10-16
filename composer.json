@@ -1,7 +1,7 @@
 {
-	"name": "exsyst/rest-bundle",
+	"name": "exsyst/api-bundle",
 	"type": "library",
-	"description": "Provides several helpers to build your rest API",
+	"description": "Provides several helpers to build your API",
 	"license": "Apache-2.0",
 	"authors": [{
 		"name": "EXSyst"
@@ -10,7 +10,7 @@
 		"php": ">=5.5",
 		"symfony/framework-bundle": "^2.7|^3.0",
 		"symfony/serializer": "^2.7|^3.0",
-		"exsyst/rest": "^0.0.6@dev"
+		"exsyst/api": "^0.1"
 	},
 	"require-dev": {
 		"symfony/phpunit-bridge": "~2.7",
@@ -23,17 +23,17 @@
 		"phpoption/phpoption": "^1.1"
 	},
 	"suggest": {
-		"symfony/serializer": "For using the rest controller features.",
-		"jms/serializer-bundle": "For using the rest controller features."
+		"symfony/serializer": "For using the serialization controller features.",
+		"jms/serializer-bundle": "For using the serialization controller features."
 	},
 	"autoload": {
 		"psr-4": {
-			"EXSyst\\Bundle\\RestBundle\\": ""
+			"EXSyst\\Bundle\\ApiBundle\\": ""
 		}
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "0.0.x-dev"
+			"dev-master": "0.1.x-dev"
 		}
 	}
 }

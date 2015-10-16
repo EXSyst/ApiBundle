@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle;
+namespace EXSyst\Bundle\ApiBundle;
 
-use EXSyst\Bundle\RestBundle\DependencyInjection\Compiler\SerializerConfigurationPass;
-use EXSyst\Bundle\RestBundle\DependencyInjection\EXSystRestExtension;
+use EXSyst\Bundle\ApiBundle\DependencyInjection\Compiler\SerializerConfigurationPass;
+use EXSyst\Bundle\ApiBundle\DependencyInjection\EXSystApiExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class EXSystRestBundle extends Bundle
+class EXSystApiBundle extends Bundle
 {
     /**
      * {@inheritdoc}
@@ -33,7 +33,7 @@ class EXSystRestBundle extends Bundle
     public function getContainerExtension()
     {
         if (null === $this->extension) {
-            $this->extension = new EXSystRestExtension();
+            $this->extension = new EXSystApiExtension();
         }
         if ($this->extension) {
             return $this->extension;

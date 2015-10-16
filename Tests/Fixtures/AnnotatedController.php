@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Tests\Fixtures;
+namespace EXSyst\Bundle\ApiBundle\Tests\Fixtures;
 
-use EXSyst\Bundle\RestBundle\Annotation\Route;
+use EXSyst\Bundle\ApiBundle\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route as SfRoute;
 

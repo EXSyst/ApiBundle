@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Tests\Routing\Loader;
+namespace EXSyst\Bundle\ApiBundle\Tests\Routing\Loader;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use EXSyst\Bundle\RestBundle\Routing\Loader\RestClassLoader;
-use EXSyst\Bundle\RestBundle\Tests\Fixtures\AnnotatedController;
+use EXSyst\Bundle\ApiBundle\Routing\Loader\ApiClassLoader;
+use EXSyst\Bundle\ApiBundle\Tests\Fixtures\AnnotatedController;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Routing\Route;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class RestClassLoaderTest extends \PHPUnit_Framework_TestCase
+class ApiClassLoaderTest extends \PHPUnit_Framework_TestCase
 {
     private static $reader;
     private $loader;
@@ -32,7 +32,7 @@ class RestClassLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->loader = new RestClassLoader(self::$reader);
+        $this->loader = new ApiClassLoader(self::$reader);
     }
 
     public function testInterface()
@@ -59,12 +59,12 @@ class RestClassLoaderTest extends \PHPUnit_Framework_TestCase
                 $defaultOptions,
                 ['defaults' => ['_controller' => AnnotatedController::class.'::barFooAction']]
             ),
-            'exsyst_rest_tests_fixtures_annotated_get' => $this->createRoute(
+            'exsyst_api_tests_fixtures_annotated_get' => $this->createRoute(
                 '/annotated',
                 $defaultOptions,
                 ['defaults' => ['_controller' => AnnotatedController::class.'::getAction'], 'methods' => ['GET']]
             ),
-            'exsyst_rest_tests_fixtures_annotated_bar_1' => $this->createRoute(
+            'exsyst_api_tests_fixtures_annotated_bar_1' => $this->createRoute(
                 '/annotated',
                 $defaultOptions,
                 ['defaults' => ['_controller' => AnnotatedController::class.'::barAction'], 'methods' => ['BAR']]
@@ -77,7 +77,7 @@ class RestClassLoaderTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupports($namespace)
     {
-        $this->assertTrue($this->loader->supports($namespace, 'rest'));
+        $this->assertTrue($this->loader->supports($namespace, 'api'));
         $this->assertFalse($this->loader->supports($namespace, 'annotation'));
     }
 

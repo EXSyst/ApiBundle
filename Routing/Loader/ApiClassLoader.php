@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Routing\Loader;
+namespace EXSyst\Bundle\ApiBundle\Routing\Loader;
 
 use Symfony\Component\Routing\Loader\AnnotationClassLoader;
 use Symfony\Component\Routing\Route;
@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Route;
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class RestClassLoader extends AnnotationClassLoader
+class ApiClassLoader extends AnnotationClassLoader
 {
     /**
      * {@inheritdoc}
@@ -58,7 +58,7 @@ class RestClassLoader extends AnnotationClassLoader
      */
     public function supports($resource, $type = null)
     {
-        return is_string($resource) && preg_match('/^(?:\\\\?[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)+$/', $resource) && $type === 'rest';
+        return is_string($resource) && preg_match('/^(?:\\\\?[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)+$/', $resource) && $type === 'api';
     }
 
     /**

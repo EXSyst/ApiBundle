@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\DependencyInjection;
+namespace EXSyst\Bundle\ApiBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * EXSystRestBundle configuration.
+ * EXSystApiBundle configuration.
  *
  * @author Ener-Getick <egetick@gmail.com>
  */
@@ -29,7 +29,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('exsyst_rest');
+        $rootNode = $treeBuilder->root('exsyst_api');
 
         $rootNode
             ->children()

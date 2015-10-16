@@ -10,7 +10,7 @@ $finder = DefaultFinder::create()
 ;
 
 $header = <<<EOF
-This file is part of the RestBundle package.
+This file is part of the ApiBundle package.
 
 (c) EXSyst
 

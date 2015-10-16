@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -11,5 +11,5 @@
 
 return [
     new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-    new \EXSyst\Bundle\RestBundle\EXSystRestBundle(),
+    new \EXSyst\Bundle\ApiBundle\EXSystApiBundle(),
 ];

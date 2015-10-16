@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the RestBundle package.
+ * This file is part of the ApiBundle package.
  *
  * (c) EXSyst
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Bundle\RestBundle\Controller;
+namespace EXSyst\Bundle\ApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-abstract class RestController extends Controller
+abstract class ApiController extends Controller
 {
     /**
      * @param mixed  $value   to be serialized
@@ -29,10 +29,10 @@ abstract class RestController extends Controller
     protected function serializeView($value, $context, $format = null)
     {
         if ($format === null) {
-            $format = $this->getParameter('exsyst_rest.serializer.default_format');
+            $format = $this->getParameter('exsyst_api.serializer.default_format');
         }
 
-        $serializer = $this->get('exsyst_rest.serializer');
+        $serializer = $this->get('exsyst_api.serializer');
 
         return $serializer->serialize($value, $format, $context);
     }
@@ -52,7 +52,7 @@ abstract class RestController extends Controller
         $serializedValue = $this->serializeView($value, $context, $format);
         $response->setContent($serializedValue);
 
-        $etagGenerator = $this->get('exsyst_rest.etag_generator');
+        $etagGenerator = $this->get('exsyst_api.etag_generator');
         $etag = $etagGenerator->generate($response->getContent());
         if ($etag !== false) {
             $response->setEtag($etag->getValue(), $etag->isWeak());

@@ -4,6 +4,6 @@ imports:
 framework:
     router: { resource: "%kernel.root_dir%/Routing/routing.yml" }
 
-exsyst_rest:
+exsyst_api:
     serialization: false
     routing: true
