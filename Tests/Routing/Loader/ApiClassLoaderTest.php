@@ -114,6 +114,7 @@ class ApiClassLoaderTest extends \PHPUnit_Framework_TestCase
             ['sÈ_ý'],
             ['\Lp6_6_91\qì7_nJÓNc'],
             ['eX½_ZC\_z_\LæÚWYi_nÐ_i'],
+            ['EXSyst\Bundle\ApiBundle\Tests\Fixtures\AnnotatedController'],
         ];
     }
 

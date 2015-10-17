@@ -46,18 +46,23 @@ abstract class ApiController extends Controller
      */
     protected function serialize($value, $context, $format = null, Response $response = null)
     {
+        $request = $this->get('request_stack')->getCurrentRequest();
+        if ($format === null) {
+            $format = $this->getParameter('exsyst_api.serializer.default_format');
+        }
         if ($response === null) {
             $response = new Response();
         }
         $serializedValue = $this->serializeView($value, $context, $format);
         $response->setContent($serializedValue);
+        $response->headers->set('Content-Type', $request->getMimeType($format));
 
         $etagGenerator = $this->get('exsyst_api.etag_generator');
         $etag = $etagGenerator->generate($response->getContent());
         if ($etag !== false) {
             $response->setEtag($etag->getValue(), $etag->isWeak());
             $response->isNotModified(
-                $this->get('request_stack')->getCurrentRequest()
+                $request
             );
         }
 

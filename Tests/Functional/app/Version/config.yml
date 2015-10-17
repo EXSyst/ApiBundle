@@ -1,0 +1,15 @@
+imports:
+    - { resource: ../config/default.yml }
+
+framework:
+    serializer:
+        enabled: true
+
+exsyst_api:
+    versioning:
+        versions:
+            v1: true
+            v1.1: true
+            v2.3: true
+            v2.4.2: true
+            v3.4.5: true
