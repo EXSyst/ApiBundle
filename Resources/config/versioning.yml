@@ -1,0 +1,22 @@
+services:
+    exsyst_api.version.listener:
+        class: EXSyst\Bundle\ApiBundle\EventListener\VersionListener
+        arguments: [ @exsyst_api.version.resolver.chain_resolver, ~ ]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    exsyst_api.version.resolver.chain_resolver:
+        class: EXSyst\Component\Api\Version\ChainVersionResolver
+        arguments: [ [] ]
+
+    exsyst_api.version.resolver.constraint_resolver:
+        class: EXSyst\Component\Api\Version\Resolver\ConstraintVersionResolver
+        arguments: [ [] ]
+
+    exsyst_api.version.resolver.query_parameter_resolver:
+        class: EXSyst\Component\Api\Version\Resolver\QueryParameterVersionResolver
+        arguments: [ [] ]
+
+    exsyst_api.version.resolver.request_attribute_resolver:
+        class: EXSyst\Component\Api\Version\Resolver\RequestAttributeVersionResolver
+        arguments: [ [] ]

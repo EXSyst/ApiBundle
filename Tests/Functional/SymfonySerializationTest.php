@@ -28,10 +28,8 @@ class SymfonySerializationTest extends WebTestCase
 <response><foo>bar</foo><bar>foo</bar><foobar/></response>
 ';
         $response = $this->client->getResponse();
-        $this->assertEquals(
-            $expectedContent,
-            $response->getContent()
-        );
+        $this->assertEquals($expectedContent, $response->getContent());
+        $this->assertEquals('text/xml; charset=UTF-8', $response->headers->get('Content-Type'));
     }
 
     public function testJsonSerialization()

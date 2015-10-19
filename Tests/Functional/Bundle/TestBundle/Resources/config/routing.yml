@@ -13,3 +13,11 @@ jms_serializer_xml:
 jms_serializer_json:
     path:     /jms-serializer/json
     defaults: { _controller: TestBundle:JMSSerializer:json }
+
+version_uri:
+    path:     /{version}/version
+    defaults: { _controller: TestBundle:Version:version }
+
+version_other:
+    path:     /version
+    defaults: { _controller: TestBundle:Version:version }

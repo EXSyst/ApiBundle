@@ -10,7 +10,7 @@
 		"php": ">=5.5",
 		"symfony/framework-bundle": "^2.7|^3.0",
 		"symfony/serializer": "^2.7|^3.0",
-		"exsyst/api": "^0.1"
+		"exsyst/api": "^0.2.1"
 	},
 	"require-dev": {
 		"symfony/phpunit-bridge": "~2.7",
@@ -20,11 +20,13 @@
 		"symfony/property-access": "^2.7|^3.0",
 		"symfony/css-selector": "^2.7|^3.0",
 		"jms/serializer-bundle": "^1.0",
-		"phpoption/phpoption": "^1.1"
+		"phpoption/phpoption": "^1.1",
+		"composer/semver": "^1.0"
 	},
 	"suggest": {
 		"symfony/serializer": "For using the serialization controller features.",
-		"jms/serializer-bundle": "For using the serialization controller features."
+		"jms/serializer-bundle": "For using the serialization controller features.",
+		"composer/semver": "For using the versioning features."
 	},
 	"autoload": {
 		"psr-4": {
