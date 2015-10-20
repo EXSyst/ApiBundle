@@ -9,10 +9,11 @@ This version of the bundle requires Symfony 2.7+.
 Installation
 ------------
 
-Installation is a quick 2 step process:
+Installation is a quick 3 step process:
 
 1. Download EXSystBundle using composer
-2. Enable the Bundle
+2. Enable the bundle
+3. Enable a serializer
 
 Step 1: Download EXSystApiBundle using composer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

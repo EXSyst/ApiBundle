@@ -2,7 +2,9 @@ Full default configuration
 ==========================
 
 .. code-block:: yaml
+
     # Default configuration for extension with alias: "exsyst_api"
+    
     exsyst_api:
         serialization:
             enabled: true
