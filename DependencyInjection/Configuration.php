@@ -64,6 +64,17 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                 ->end()
+                ->arrayNode('parameter')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->arrayNode('validation')
+                            ->canBeEnabled()
+                            ->children()
+                                ->scalarNode('attributeName')->defaultValue('validationErrors')->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

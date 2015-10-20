@@ -26,7 +26,7 @@ abstract class ApiController extends Controller
      *
      * @return string
      */
-    protected function serializeView($value, $context, $format = null)
+    protected function serializeView($value, $context = null, $format = null)
     {
         if ($format === null) {
             $format = $this->getParameter('exsyst_api.serializer.default_format');
@@ -34,7 +34,11 @@ abstract class ApiController extends Controller
 
         $serializer = $this->get('exsyst_api.serializer');
 
-        return $serializer->serialize($value, $format, $context);
+        if ($context === null) {
+            return $serializer->serialize($value, $format);
+        } else {
+            return $serializer->serialize($value, $format, $context);
+        }
     }
 
     /**
@@ -44,7 +48,7 @@ abstract class ApiController extends Controller
      *
      * @return Response
      */
-    protected function serialize($value, $context, $format = null, Response $response = null)
+    protected function serialize($value, $context = null, $format = null, Response $response = null)
     {
         $request = $this->get('request_stack')->getCurrentRequest();
         if ($format === null) {

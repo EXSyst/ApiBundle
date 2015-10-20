@@ -21,3 +21,7 @@ version_uri:
 version_other:
     path:     /version
     defaults: { _controller: TestBundle:Version:version }
+
+parameter_validation:
+    path:     /parameter-validation
+    defaults: { _controller: TestBundle:ParameterValidation:validate }

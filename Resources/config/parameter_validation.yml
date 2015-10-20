@@ -1,0 +1,14 @@
+services:
+    exsyst_api.parameter.reader:
+        class: EXSyst\Component\Api\Parameter\ParameterReader
+        arguments: [ @annotation_reader ]
+
+    exsyst_api.parameter.validator:
+        class: EXSyst\Component\Api\Parameter\ParameterValidator
+        arguments: [ @request_stack, @validator ]
+
+    exsyst_api.parameter.validation_listener:
+        class: EXSyst\Bundle\ApiBundle\EventListener\ParameterValidationListener
+        arguments: [ @exsyst_api.parameter.reader, @exsyst_api.parameter.validator, ~ ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController, priority: 5 }
