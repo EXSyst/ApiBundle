@@ -1,6 +1,6 @@
 {
 	"name": "exsyst/api-bundle",
-	"type": "library",
+	"type": "symfony-bundle",
 	"description": "Provides several helpers to build your API",
 	"license": "Apache-2.0",
 	"authors": [{
