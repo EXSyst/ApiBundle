@@ -16,7 +16,7 @@ This bundle includes:
 Documentation
 =============
 
-[Read the Documentation](https://github.com/EXSyst/ApiBundle/blob/master/Resources/doc/index.srt)
+[Read the Documentation](https://github.com/EXSyst/ApiBundle/blob/master/Resources/doc/index.rst)
 
 Please see the [UPGRADING.md](https://github.com/EXSyst/ApiBundle/blob/master/UPGRADING.md) for any
 relevant instructions when upgrading to a newer version.

@@ -58,4 +58,4 @@ Configuration reference
 
 .. _`Symfony Serializer`: http://symfony.com/doc/current/cookbook/serializer.html
 .. _`JMSSerializerBundle`: https://github.com/schmittjoh/JMSSerializerBundle
-.. _`Configuration reference`: https://github.com/EXSyst/ApiBundle/tree/master/Resources/doc/configuration_reference.srt
+.. _`Configuration reference`: https://github.com/EXSyst/ApiBundle/tree/master/Resources/doc/configuration_reference.rst
