@@ -1,7 +1,7 @@
 {
 	"name": "exsyst/api-bundle",
 	"type": "symfony-bundle",
-	"description": "Provides several helpers to build your API",
+	"description": "Provides several helpers to build API's",
 	"license": "Apache-2.0",
 	"authors": [{
 		"name": "EXSyst"
@@ -9,7 +9,6 @@
 	"require": {
 		"php": ">=5.5",
 		"symfony/framework-bundle": "^2.7|^3.0",
-		"symfony/serializer": "^2.7|^3.0",
 		"exsyst/api": "^0.2.1"
 	},
 	"require-dev": {
