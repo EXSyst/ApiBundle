@@ -11,7 +11,7 @@ Installation
 
 Installation is a quick 3 step process:
 
-1. Download EXSystBundle using composer
+1. Download EXSystApiBundle using composer
 2. Enable the bundle
 3. Enable a serializer
 
