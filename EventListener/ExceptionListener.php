@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Symfony package.
+ * This file is part of the ApiBundle package.
  *
- * (c) Fabien Potencier <fabien@symfony.com>
+ * (c) EXSyst
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,14 +12,11 @@
 namespace Symfony\Component\HttpKernel\EventListener;
 
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Debug\Exception\FlattenException;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * ExceptionListener.
@@ -71,9 +68,9 @@ class ExceptionListener implements EventSubscriberInterface
 
     public static function getSubscribedEvents()
     {
-        return array(
-            KernelEvents::EXCEPTION => array('onKernelException', -128),
-        );
+        return [
+            KernelEvents::EXCEPTION => ['onKernelException', -128],
+        ];
     }
 
     /**
@@ -86,9 +83,9 @@ class ExceptionListener implements EventSubscriberInterface
     {
         if (null !== $this->logger) {
             if (!$exception instanceof HttpExceptionInterface || $exception->getStatusCode() >= 500) {
-                $this->logger->critical($message, array('exception' => $exception));
+                $this->logger->critical($message, ['exception' => $exception]);
             } else {
-                $this->logger->error($message, array('exception' => $exception));
+                $this->logger->error($message, ['exception' => $exception]);
             }
         }
     }

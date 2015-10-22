@@ -25,7 +25,7 @@ class VersionTest extends WebTestCase
     {
         $this->client->request('GET', '/v2/version');
         $response = $this->client->getResponse();
-        $this->assertEquals('v2.4.2', $response->getContent());
+        $this->assertEquals('v2', $response->getContent());
     }
 
     public function testQueryVersion()
