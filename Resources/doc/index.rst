@@ -34,13 +34,21 @@ Enable the bundle in the kernel::
     <?php
     // app/AppKernel.php
 
-    public function registerBundles()
+    // ...
+    class AppKernel extends Kernel
     {
-        $bundles = array(
+        public function registerBundles()
+        {
+            $bundles = array(
+                // ...
+
+                new EXSyst\Bundle\ApiBundle\EXSystApiBundle(),
+            );
+
             // ...
-            new EXSyst\Bundle\ApiBundle\EXSystApiBundle(),
-            // ...
-        );
+        }
+
+        // ...
     }
 
 Step 3: Enable a serializer

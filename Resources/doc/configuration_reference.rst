@@ -4,7 +4,7 @@ Full default configuration
 .. code-block:: yaml
 
     # Default configuration for extension with alias: "exsyst_api"
-    
+
     exsyst_api:
         serialization:
             enabled: true
@@ -16,6 +16,6 @@ Full default configuration
             attributeName: apiVersion
             default: null
             versions: {  }
-            resolvers: { uri: true, query: true, constraint: true }
+            resolvers: { query: true, constraint: true }
         parameter:
             validation: { enabled: false, attributeName: validationErrors }

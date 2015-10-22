@@ -16,7 +16,3 @@ services:
     exsyst_api.version.resolver.query_parameter_resolver:
         class: EXSyst\Component\Api\Version\Resolver\QueryParameterVersionResolver
         arguments: [ [] ]
-
-    exsyst_api.version.resolver.request_attribute_resolver:
-        class: EXSyst\Component\Api\Version\Resolver\RequestAttributeVersionResolver
-        arguments: [ [] ]

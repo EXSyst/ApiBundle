@@ -67,20 +67,14 @@ class EXSystApiExtension extends Extension
             $loader->load('versioning.yml');
 
             $container->getDefinition('exsyst_api.version.listener')
-                ->replaceArgument(1, $config['versioning']['attributeName'])
+                ->replaceArgument(1, $config['versioning']['attribute_name'])
                 ->addMethodCall('setDefaultVersion', [$config['versioning']['default']]);
 
             $versions = Semver::rsort(array_keys($config['versioning']['versions']));
-            $container->getDefinition('exsyst_api.version.resolver.request_attribute_resolver')->replaceArgument(0, $versions);
             $container->getDefinition('exsyst_api.version.resolver.query_parameter_resolver')->replaceArgument(0, $versions);
             $container->getDefinition('exsyst_api.version.resolver.constraint_resolver')->replaceArgument(0, $versions);
 
             $resolvers = [];
-            if ($config['versioning']['resolvers']['uri']) {
-                $resolvers[] = new Reference('exsyst_api.version.resolver.request_attribute_resolver');
-            } else {
-                $container->removeDefinition('exsyst_api.version.resolver.request_attribute_resolver');
-            }
             if ($config['versioning']['resolvers']['query']) {
                 $resolvers[] = new Reference('exsyst_api.version.resolver.query_parameter_resolver');
             } else {
@@ -101,7 +95,7 @@ class EXSystApiExtension extends Extension
         if ($config['parameter']['validation']['enabled']) {
             $loader->load('parameter_validation.yml');
 
-            $container->getDefinition('exsyst_api.parameter.validation_listener')->replaceArgument(2, $config['parameter']['validation']['attributeName']);
+            $container->getDefinition('exsyst_api.parameter.validation_listener')->replaceArgument(2, $config['parameter']['validation']['attribute_name']);
         }
     }
 

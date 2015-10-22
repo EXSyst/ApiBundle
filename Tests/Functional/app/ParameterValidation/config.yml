@@ -9,4 +9,4 @@ exsyst_api:
     parameter:
         validation:
             enabled: true
-            attributeName: apiErrors
+            attribute_name: apiErrors

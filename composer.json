@@ -9,7 +9,7 @@
 	"require": {
 		"php": ">=5.5",
 		"symfony/framework-bundle": "^2.7|^3.0",
-		"exsyst/api": "^0.2.1"
+		"exsyst/api": "^0.2.2"
 	},
 	"require-dev": {
 		"symfony/phpunit-bridge": "~2.7",

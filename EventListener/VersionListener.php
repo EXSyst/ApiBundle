@@ -63,7 +63,7 @@ class VersionListener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            KernelEvents::REQUEST => [['onKernelRequest', 0]],
+            KernelEvents::REQUEST => [['onKernelRequest', 33]],
         ];
     }
 }

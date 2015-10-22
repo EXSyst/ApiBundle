@@ -15,8 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class VersionController
 {
-    public function versionAction($apiVersion)
+    public function versionAction($versionApi)
     {
-        return new Response($apiVersion);
+        return new Response($versionApi);
     }
 }
