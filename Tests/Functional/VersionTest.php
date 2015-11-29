@@ -37,7 +37,7 @@ class VersionTest extends WebTestCase
 
     public function testConstraintVersion()
     {
-        $this->client->request('GET', '/version', [], [], ['HTTP_X-Accept-Version' => '>=1.0 <2.4']);
+        $this->client->request('GET', '/version', [], [], ['HTTP_X-Accept-Version' => '>=1.0,<2.4']);
         $response = $this->client->getResponse();
         $this->assertEquals('v2.3', $response->getContent());
     }

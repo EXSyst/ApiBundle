@@ -1,6 +1,6 @@
 services:
     exsyst_api.routing.loader.api_class:
         class: EXSyst\Bundle\ApiBundle\Routing\Loader\ApiClassLoader
-        arguments: [ @annotation_reader ]
+        arguments: [ "@annotation_reader" ]
         tags:
             - { name: routing.loader }

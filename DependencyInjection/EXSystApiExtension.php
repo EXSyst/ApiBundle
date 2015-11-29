@@ -70,9 +70,8 @@ class EXSystApiExtension extends Extension
                 ->replaceArgument(1, $config['versioning']['attribute_name'])
                 ->addMethodCall('setDefaultVersion', [$config['versioning']['default']]);
 
-            $versions = Semver::rsort(array_keys($config['versioning']['versions']));
-            $container->getDefinition('exsyst_api.version.resolver.query_parameter_resolver')->replaceArgument(0, $versions);
-            $container->getDefinition('exsyst_api.version.resolver.constraint_resolver')->replaceArgument(0, $versions);
+            $container->getDefinition('exsyst_api.version.matcher')
+                ->replaceArgument(0, array_keys($config['versioning']['versions']));
 
             $resolvers = [];
             if ($config['versioning']['resolvers']['query']) {
