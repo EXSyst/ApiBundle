@@ -11,8 +11,8 @@
 
 namespace EXSyst\Bundle\ApiBundle\EventListener;
 
-use EXSyst\Component\Api\Version\VersionResolverInterface;
 use EXSyst\Component\Api\Version\VersionMatcher;
+use EXSyst\Component\Api\Version\VersionResolverInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -91,14 +91,16 @@ class VersionListener implements EventSubscriberInterface
 
     /**
      * @param scalar|null $version
+     *
      * @return scalar|null
      */
-    private function matchVersion($version) {
-        if(null === $this->versionMatcher || null === $version) {
+    private function matchVersion($version)
+    {
+        if (null === $this->versionMatcher || null === $version) {
             return $version;
         } else {
             $matches = $this->versionMatcher->match($version);
-            if(isset($matches[0])) {
+            if (isset($matches[0])) {
                 return $matches[0];
             }
         }
